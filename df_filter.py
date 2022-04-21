@@ -20,4 +20,4 @@ lst = ['Все']; lst= lst + list(df['A'].drop_duplicates().sort_values().values
 #sel_val=st.sidebar.multiselect('выберите значения', lst,  'Все')
 sel_val=st.sidebar.selectbox('выберите значения', lst, 0)
 st.sidebar.write('Выбрано:', sel_val, type(sel_val))
-#st.dataframe(df_flt(sel_val, df))
+st.dataframe(df_flt(sel_val, df))
