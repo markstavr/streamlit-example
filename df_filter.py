@@ -21,10 +21,10 @@ st.dataframe(df_flt(sel_val, df))
 st.sidebar.title("Filter multiselect")
 sel_val_ms =st.sidebar.multiselect('выберите значения', lst,  'Все')
 st.sidebar.write('Выбрано:', sel_val_ms, type(sel_val))
-def df_flt_ms(sel_val, df):
-  if sel_val == 'Все':
+def df_flt_ms(sel_val_lst, df):
+  if 'Все' in sel_val_lst or len(sel_val_lst)==0:
     return df
   else:
-    s1=df['A']==sel_val
+    s1=df['A'].isin(sel_val_lst)
     return df[s1]
-st.dataframe(df_flt(sel_val_ms, df))
+st.dataframe(df_flt_ms(sel_val_ms, df))
