@@ -16,6 +16,7 @@ st.sidebar.title("Filter selectbox")
 lst = ['Все']; lst= lst + list(df['A'].drop_duplicates().sort_values().values)
 sel_val=st.sidebar.selectbox('выберите значения', lst, 0)
 st.sidebar.write('Выбрано:', sel_val, type(sel_val))
+st.caption("DataFrame Filter selectbox")
 st.dataframe(df_flt(sel_val, df))
 # отбор с использованием multiselect
 st.sidebar.title("Filter multiselect")
@@ -27,4 +28,5 @@ def df_flt_ms(sel_val_lst, df):
   else:
     s1=df['A'].isin(sel_val_lst)
     return df[s1]
+st.caption("DataFrame Filter multiselect")
 st.dataframe(df_flt_ms(sel_val_ms, df))
