@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 np.random.seed(0)
-df = pd.DataFrame(np.round(np.random.randn(5, 1),3), columns=list('A'))
+df = pd.DataFrame(np.round(np.random.randn(20, 1), 6), columns=list('A'))
 # Настройка заголовка и текста 
 st.title("Пример фильтрации Pandas DataFrame")
 # отбор с использованием selectbox
