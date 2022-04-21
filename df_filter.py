@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-df = pd.DataFrame(np.round(np.random.randn(50, 1),3), columns=list('A'))
+df = pd.DataFrame(np.round(np.random.randn(5, 1),3), columns=list('A'))
 # Настройка заголовка и текста 
 st.title("DATAFRAME FILTER")
 #st.dataframe(df)
